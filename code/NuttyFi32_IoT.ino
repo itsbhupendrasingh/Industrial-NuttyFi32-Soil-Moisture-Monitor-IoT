@@ -4,7 +4,7 @@
 
 #define SOIL_PIN 34
 
-// 🔥 AP Credentials (change if needed)
+//  AP Credentials (change if needed)
 const char* ssid = "SME_Plant_Monitoring";
 const char* password = "12345678";
 
@@ -183,20 +183,20 @@ void setup() {
   analogReadResolution(12);
   analogSetAttenuation(ADC_11db);
 
-  // 🔥 Start Access Point
+  // Start Access Point
   WiFi.softAP(ssid, password);
 
   Serial.println("Access Point Started");
   Serial.println(WiFi.softAPIP());
 
-  // 🔥 Start DNS (Captive Portal)
+  // Start DNS (Captive Portal)
   dnsServer.start(DNS_PORT, "*", WiFi.softAPIP());
 
   // Routes
   server.on("/", handleRoot);
   server.on("/data", handleData);
 
-  // 🔥 Redirect ALL unknown requests
+  //  Redirect ALL unknown requests
   server.onNotFound([]() {
     server.send(200, "text/html", getHTML());
   });
@@ -206,6 +206,6 @@ void setup() {
 
 // ---------- LOOP ----------
 void loop() {
-  dnsServer.processNextRequest();  // 🔥 Required
+  dnsServer.processNextRequest();  // Required
   server.handleClient();
 }
