@@ -19,7 +19,7 @@ A real-time IoT-based soil moisture monitoring system using ESP32 (NuttyFi32) wi
 
 ## 🧰 Hardware Used
 
-- NuttyFi32 (ESP32-based board)
+- NuttyFi32/ ESP32
 - Capacitive Soil Moisture Sensor
 - Custom Interfacing PCB (Designed by SME Dehradun)
 - Jumper Wires (Female-Female)
